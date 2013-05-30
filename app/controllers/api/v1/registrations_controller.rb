@@ -7,7 +7,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource
     if resource.save
-      sign_in resource
+      sign_in(resource, :store => false)
       render :status => 200,
            :json => { :success => true,
                       :info => "Registered",
