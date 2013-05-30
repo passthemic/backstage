@@ -1,8 +1,5 @@
 PtmBackstage::Application.routes.draw do
 
-  resources :verses
-
-
   devise_for :users
   namespace :api do
     namespace :v1 do
