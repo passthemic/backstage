@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530161856) do
+ActiveRecord::Schema.define(:version => 20130530205023) do
 
   create_table "raps", :force => true do |t|
     t.integer  "user_id"
@@ -48,5 +48,19 @@ ActiveRecord::Schema.define(:version => 20130530161856) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
+
+  create_table "verses", :force => true do |t|
+    t.integer  "rap_id"
+    t.integer  "user_id"
+    t.string   "vocal_track_file_name"
+    t.string   "vocal_track_content_type"
+    t.integer  "vocal_track_file_size"
+    t.datetime "vocal_track_updated_at"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "verses", ["rap_id"], :name => "index_verses_on_rap_id"
+  add_index "verses", ["user_id"], :name => "index_verses_on_user_id"
 
 end
