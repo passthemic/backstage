@@ -8,18 +8,16 @@ class RapsController < ApplicationController
 
   def index
     @raps = Rap.find_raps_created_by_or_invited_to(current_user)
-    respond_with @raps
   end
 
   def show
     @rap = Rap.find params[:id]
-    respond_with @rap
   end
 
   def create
     @rap = Rap.new params[:rap]
     if @rap.save
-      respond_with :api, :v1, @rap
+      @rap
     else
       render :status => :unprocessable_entity,
              :json => { :success => false,
@@ -31,7 +29,7 @@ class RapsController < ApplicationController
   def update
     @rap = Rap.find params[:id]
     if @rap.update_attributes params[:rap]
-      respond_with :api, :v1, @rap
+      @rap
     else
       render :status => :unprocessable_entity,
              :json => { :success => false,

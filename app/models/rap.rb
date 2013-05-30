@@ -4,7 +4,8 @@ class Rap < ActiveRecord::Base
   belongs_to :user
   has_attached_file :final_cut,
                     :storage => :s3,
-                    :s3_credentials => S3_CREDENTIALS
+                    :s3_credentials => S3_CREDENTIALS,
+                    :default_url => "nil"
 
   def self.find_raps_created_by_or_invited_to(user)
     self.where('user_id = ? OR friend_id = ?', user.id, user.id)
