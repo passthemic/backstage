@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530065942) do
+ActiveRecord::Schema.define(:version => 20130530161856) do
+
+  create_table "raps", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.string   "final_cut_file_name"
+    t.string   "final_cut_content_type"
+    t.integer  "final_cut_file_size"
+    t.datetime "final_cut_updated_at"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  add_index "raps", ["friend_id"], :name => "index_raps_on_friend_id"
+  add_index "raps", ["user_id"], :name => "index_raps_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -5,8 +5,11 @@ PtmBackstage::Application.routes.draw do
     namespace :v1 do
       devise_scope :user do
         post 'registrations' => 'registrations#create', :as => 'register'
-        post 'sessions' => 'sessions#create', :as => 'login'
-        delete 'sessions' => 'sessions#destroy', :as => 'logout'
+        post 'sessions'      => 'sessions#create',      :as => 'login'
+        delete 'sessions'    => 'sessions#destroy',     :as => 'logout'
+      end
+      resources :raps do
+        resources :verses
       end
     end
   end
