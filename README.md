@@ -1,6 +1,8 @@
 #Pass the Mic API V1 Documentation
+
 ##General Info
 All requests *except* registration and login require the user's auth_token to be passed in the http header:
+
 ####Header
     Authorization
 ####Value
