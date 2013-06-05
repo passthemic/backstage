@@ -22,18 +22,12 @@ All requests *except* registration and login require the user's auth_token to be
     }
 ####Response:
     {
-        "success": true,
-        "info": "Registered",
-        "data": {
-            "user": {
-                "created_at": "2013-05-30T21:46:31Z",
-                "email": "user@example.com",
-                "id": 5,
-                "updated_at": "2013-05-30T21:46:31Z",
-                "username": "testaccount"
-            },
-            "auth_token": "m4XE9ASesPfwp2YDQSRk"
-        }
+        "id": 6,
+        "created_at": "2013-06-05T16:34:38Z",
+        "updated_at": "2013-06-05T16:34:38Z",
+        "username": "testaccount10",
+        "email": "user10@example.com",
+        "auth_token": "XoFDTTzGzoJUsjSHGpae"
     }
 ****
 
