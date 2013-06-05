@@ -53,7 +53,7 @@ All requests *except* registration and login require the user's auth_token to be
         "updated_at": "2013-06-05T01:36:56Z",
         "username": "testaccount",
         "email": "user3@example.com",
-        "authentication_token": "ZF6qC8XyQq9oFkAgiqez"
+        "auth_token": "ZF6qC8XyQq9oFkAgiqez"
     }
 ****
 
