@@ -229,3 +229,37 @@ All requests *except* registration and login require the user's auth_token to be
     }
 
 ****
+
+##Friend
+### Index
+    GET    /api/v1/friends
+####Request:
+    {
+        #only auth_token that is sent in the http header and the proper rap_id in the path.
+    }
+####Response:
+    [
+        {
+            "id": 2,
+            "created_at": "2013-05-30T09:10:50Z",
+            "updated_at": "2013-05-30T09:40:33Z",
+            "username": "testuser",
+            "email": "user@example.com"
+        },
+        {
+            "id": 3,
+            "created_at": "2013-05-30T09:29:56Z",
+            "updated_at": "2013-05-30T09:46:17Z",
+            "username": "anotheruser",
+            "email": "user1@example.com"
+        },
+        {
+            "id": 7,
+            "created_at": "2013-06-07T18:55:12Z",
+            "updated_at": "2013-06-07T18:55:12Z",
+            "username": "testaccount11",
+            "email": "user11@example.com"
+        }
+    ]
+
+****

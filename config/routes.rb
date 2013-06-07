@@ -1,5 +1,6 @@
 PtmBackstage::Application.routes.draw do
 
+
   devise_for :users
   namespace :api do
     namespace :v1 do
@@ -11,6 +12,7 @@ PtmBackstage::Application.routes.draw do
       resources :raps do
         resources :verses
       end
+      resources :friends
     end
   end
 
