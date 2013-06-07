@@ -12,7 +12,7 @@ PtmBackstage::Application.routes.draw do
       resources :raps do
         resources :verses
       end
-      resources :friends
+      resources :friends, only: [ :index, :show ]
     end
   end
 
