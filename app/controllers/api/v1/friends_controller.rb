@@ -1,4 +1,4 @@
-class FriendsController < ApplicationController
+class Api::V1::FriendsController < ApplicationController
   def index
     @friends = User.all
   end
