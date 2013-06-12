@@ -160,7 +160,7 @@ All requests *except* registration and login require the user's auth_token to be
 
 ##Verse
 ### Index
-    GET    /api/v1/raps/:rap_id/verses
+    GET    /api/v1/verses
 ####Request:
     {
         #only auth_token that is sent in the http header and the proper rap_id in the path.
@@ -183,7 +183,7 @@ All requests *except* registration and login require the user's auth_token to be
         }
     ]
 ### Create
-    POST   /api/v1/raps/:rap_id/verses
+    POST   /api/v1/verses
 ####Request:
     {
         "verse": {
@@ -202,7 +202,7 @@ All requests *except* registration and login require the user's auth_token to be
         "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/003/original/284.mp3"
     }
 ### Show
-    GET    /api/v1/raps/:rap_id/verses/:id
+    GET    /api/v1/verses/:id
 ####Request:
     {
         #only auth_token that is sent in the http header and the proper rap_id and id in the path.
@@ -216,7 +216,7 @@ All requests *except* registration and login require the user's auth_token to be
         "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/003/original/284.mp3"
     }
 ### Destroy
-    DELETE /api/v1/raps/:rap_id/verses/:id
+    DELETE /api/v1/verses/:id
 ####Request:
     {
         #only auth_token that is sent in the http header and the proper rap_id and id in the path.
