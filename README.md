@@ -75,43 +75,27 @@ All requests *except* registration and login require the user's auth_token to be
 ####Response:
     [
         {
-                "id": 8,
-                "created_at": "2013-05-30T18:08:00Z",
-                "updated_at": "2013-05-30T18:08:00Z",
-                "user_id": 1,
-                "friend_id": 4,
+                "id": 26,
+                "created_at": "2013-06-12T04:39:44Z",
+                "updated_at": "2013-06-12T04:39:44Z",
+                "user_id": 12,
+                "friend_id": 11,
+                "user_username": "testaccount2",
+                "friend_username": "testaccount",
                 "final_cut_url": "nil"
             },
             {
                 "id": 12,
                 "created_at": "2013-05-30T18:25:37Z",
                 "updated_at": "2013-05-30T18:25:37Z",
-                "user_id": 4,
-                "friend_id": 3,
+                "user_id": 12,
+                "friend_id": 11,
+                "user_username": "testaccount2",
+                "friend_username": "testaccount",
                 "final_cut_url": "http://s3.amazonaws.com/passthemic_testing/raps/final_cuts/000/000/009/original/1.mp3"
             }
         }
     ]
-### Create
-    POST   /api/v1/raps
-####Request:
-    {
-        "rap": {
-            "user_id": "4",
-            "friend_id": "8"
-        }
-    }
-####Response:
-    {
-        "id": 21,
-        "created_at": "2013-05-30T22:06:02Z",
-        "updated_at": "2013-05-30T22:06:02Z",
-        "user_id": 4,
-        "friend_id": 8,
-        "user_username": "testaccount2",
-        "friend_username": "testaccount",
-        "final_cut_url": "nil"
-    }
 ### Show
     GET    /api/v1/raps/:id
 ####Request:
@@ -134,7 +118,7 @@ All requests *except* registration and login require the user's auth_token to be
 ####Request:
     {
         "rap": {
-            "final_cut": "214.mp3" 
+            "final_cut": "214.mp3"
             #your file with the final spliced together vocal_tracks.
         }
     }
@@ -169,7 +153,7 @@ All requests *except* registration and login require the user's auth_token to be
     GET    /api/v1/verses
 ####Request:
     {
-        #only auth_token that is sent in the http header and the proper rap_id in the path.
+        #only auth_token that is sent in the http header in the path.
     }
 ####Response:
     [
@@ -191,41 +175,74 @@ All requests *except* registration and login require the user's auth_token to be
 ### Create
     POST   /api/v1/verses
 ####Request:
+  A request can be made in two ways.  If there is no rap created yet then you will follow this format:
     {
+        "rap" {
+            "user_id": "4",
+            "friend_id": "5"
+        }
         "verse": {
             "user_id": "4",
-            "rap_id": "22",
+            "rap_id": "",
             "vocal_track": "284.mp3"
             #your vocal_track
         }
     }
+  If there is already a rap_id  then your request will follow this format:
+        {
+            "rap" {
+                "user_id": "",
+                "friend_id": ""
+            }
+            # the rap item can be left out of your json request if easier for you.
+            "verse": {
+                "user_id": "4",
+                "rap_id": "22",
+                "vocal_track": "284.mp3"
+                #your vocal_track
+            }
+        }
 ####Response:
     {
-        "id": 3,
-        "created_at": "2013-05-30T22:18:39Z",
+        "id": 14,
+        "created_at": "2013-06-12T04:39:44Z",
         "user_id": 4,
-        "rap_id": 22,
-        "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/003/original/284.mp3"
+        "rap_id": 26,
+        "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/284.mp3",
+        "rap": {
+            "id": 26,
+            "user_id": 4,
+            "friend_id": 4,
+            "user_username": "testaccount2",
+            "friend_username": "testaccount"
+        }
     }
 ### Show
     GET    /api/v1/verses/:id
 ####Request:
     {
-        #only auth_token that is sent in the http header and the proper rap_id and id in the path.
+        #only auth_token that is sent in the http header and the proper id in the path.
     }
 ####Response:
     {
-        "id": 3,
-        "created_at": "2013-05-30T22:18:39Z",
+        "id": 14,
+        "created_at": "2013-06-12T04:39:44Z",
         "user_id": 4,
-        "rap_id": 22,
-        "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/003/original/284.mp3"
+        "rap_id": 26,
+        "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/284.mp3",
+        "rap": {
+            "id": 26,
+            "user_id": 4,
+            "friend_id": 4,
+            "user_username": "testaccount2",
+            "friend_username": "testaccount"
+        }
     }
 ### Destroy
     DELETE /api/v1/verses/:id
 ####Request:
     {
-        #only auth_token that is sent in the http header and the proper rap_id and id in the path.
+        #only auth_token that is sent in the http header and the proper id in the path.
     }
 ####Response:
     {
