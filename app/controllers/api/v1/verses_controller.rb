@@ -6,10 +6,6 @@ class Api::V1::VersesController < ApplicationController
 
   respond_to :json
 
-  def index
-    @verses = Rap.find(params[:rap_id]).verses
-  end
-
   def show
     @verse = Verse.find(params[:id])
   end
