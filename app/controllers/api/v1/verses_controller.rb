@@ -15,7 +15,13 @@ class Api::V1::VersesController < ApplicationController
   end
 
   def create
+    if params[:verse][:rap_id].present?
+      @rap = Rap.find params[:verse][:rap_id]
+    else
+      @rap = Rap.create params[:rap]
+    end
     @verse = Verse.new params[:verse]
+    @verse.rap_id = @rap.id
     if @verse.save
       @verse
     else
