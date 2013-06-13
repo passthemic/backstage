@@ -108,6 +108,8 @@ All requests *except* registration and login require the user's auth_token to be
         "updated_at": "2013-05-30T22:06:02Z",
         "user_id": 4,
         "friend_id": 8,
+        "user_username": "testaccount2",
+        "friend_username": "testaccount",
         "final_cut_url": "nil"
     }
 ### Show
@@ -123,6 +125,8 @@ All requests *except* registration and login require the user's auth_token to be
         "updated_at": "2013-05-30T22:06:02Z",
         "user_id": 4,
         "friend_id": 8,
+        "user_username": "testaccount2",
+        "friend_username": "testaccount",
         "final_cut_url": "nil"
     }
 ### Update
@@ -141,6 +145,8 @@ All requests *except* registration and login require the user's auth_token to be
         "updated_at": "2013-05-30T22:11:45Z",
         "user_id": 4,
         "friend_id": 8,
+        "user_username": "testaccount2",
+        "friend_username": "testaccount",
         "final_cut_url": "http://s3.amazonaws.com/passthemic_testing/raps/final_cuts/000/000/021/original/214.mp3"
     }
 ### Destroy
