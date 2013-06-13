@@ -9,10 +9,9 @@ PtmBackstage::Application.routes.draw do
         post 'sessions'      => 'sessions#create',      :as => 'login'
         delete 'sessions'    => 'sessions#destroy',     :as => 'logout'
       end
-      resources :raps do
-        resources :verses
-      end
-      resources :friends, only: [ :index, :show ]
+      resources :raps,    except: [ :create ]
+      resources :verses,  except: [ :index ]
+      resources :friends, only:   [ :index, :show ]
     end
   end
 

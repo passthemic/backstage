@@ -14,18 +14,6 @@ class Api::V1::RapsController < ApplicationController
     @rap = Rap.find params[:id]
   end
 
-  def create
-    @rap = Rap.new params[:rap]
-    if @rap.save
-      @rap
-    else
-      render :status => :unprocessable_entity,
-             :json => { :success => false,
-                        :info => @rap.errors,
-                        :data => {} }
-    end
-  end
-
   def update
     @rap = Rap.find params[:id]
     if @rap.update_attributes params[:rap]
