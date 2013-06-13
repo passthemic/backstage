@@ -75,25 +75,28 @@ All requests *except* registration and login require the user's auth_token to be
 ####Response:
     [
         {
-                "id": 26,
-                "created_at": "2013-06-12T04:39:44Z",
-                "updated_at": "2013-06-12T04:39:44Z",
-                "user_id": 12,
-                "friend_id": 11,
-                "user_username": "testaccount2",
-                "friend_username": "testaccount",
-                "final_cut_url": "nil"
-            },
-            {
-                "id": 12,
-                "created_at": "2013-05-30T18:25:37Z",
-                "updated_at": "2013-05-30T18:25:37Z",
-                "user_id": 12,
-                "friend_id": 11,
-                "user_username": "testaccount2",
-                "friend_username": "testaccount",
-                "final_cut_url": "http://s3.amazonaws.com/passthemic_testing/raps/final_cuts/000/000/009/original/1.mp3"
-            }
+            "id": 26,
+            "created_at": "2013-06-12T04:39:44Z",
+            "updated_at": "2013-06-12T04:39:44Z",
+            "user_id": 12,
+            "friend_id": 11,
+            "user_username": "testaccount2",
+            "friend_username": "testaccount",
+            "final_cut_url": "nil",
+            "verses": [
+                {
+                    "id": 14,
+                    "created_at": "2013-06-12T04:39:44Z",
+                    "user_id": 12,
+                    "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/123.mp3"
+                },
+                {
+                    "id": 15,
+                    "created_at": "2013-06-12T04:43:23Z",
+                    "user_id": 11,
+                    "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/015/original/124.mp3"
+                }
+            ]
         }
     ]
 ### Show
@@ -104,14 +107,28 @@ All requests *except* registration and login require the user's auth_token to be
     }
 ####Response:
     {
-        "id": 21,
-        "created_at": "2013-05-30T22:06:02Z",
-        "updated_at": "2013-05-30T22:06:02Z",
-        "user_id": 4,
-        "friend_id": 8,
+        "id": 26,
+        "created_at": "2013-06-12T04:39:44Z",
+        "updated_at": "2013-06-12T04:39:44Z",
+        "user_id": 12,
+        "friend_id": 11,
         "user_username": "testaccount2",
         "friend_username": "testaccount",
-        "final_cut_url": "nil"
+        "final_cut_url": "nil",
+        "verses": [
+            {
+                "id": 14,
+                "created_at": "2013-06-12T04:39:44Z",
+                "user_id": 12,
+                "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/canvas.pdf"
+            },
+            {
+                "id": 15,
+                "created_at": "2013-06-12T04:43:23Z",
+                "user_id": 11,
+                "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/015/original/canvas.pdf"
+            }
+        ]
     }
 ### Update
     PUT    /api/v1/raps/:id
@@ -124,14 +141,28 @@ All requests *except* registration and login require the user's auth_token to be
     }
 ####Response:
     {
-        "id": 21,
-        "created_at": "2013-05-30T22:06:02Z",
-        "updated_at": "2013-05-30T22:11:45Z",
-        "user_id": 4,
-        "friend_id": 8,
+        "id": 26,
+        "created_at": "2013-06-12T04:39:44Z",
+        "updated_at": "2013-06-12T04:39:44Z",
+        "user_id": 12,
+        "friend_id": 11,
         "user_username": "testaccount2",
         "friend_username": "testaccount",
-        "final_cut_url": "http://s3.amazonaws.com/passthemic_testing/raps/final_cuts/000/000/021/original/214.mp3"
+        "final_cut_url": "http://s3.amazonaws.com/passthemic_testing/raps/final_cuts/000/000/021/original/214.mp3",
+        "verses": [
+            {
+                "id": 14,
+                "created_at": "2013-06-12T04:39:44Z",
+                "user_id": 12,
+                "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/canvas.pdf"
+            },
+            {
+                "id": 15,
+                "created_at": "2013-06-12T04:43:23Z",
+                "user_id": 11,
+                "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/015/original/canvas.pdf"
+            }
+        ]
     }
 ### Destroy
     DELETE /api/v1/raps/:id
@@ -149,29 +180,6 @@ All requests *except* registration and login require the user's auth_token to be
 
 
 ##Verse
-### Index
-    GET    /api/v1/verses
-####Request:
-    {
-        #only auth_token that is sent in the http header in the path.
-    }
-####Response:
-    [
-        {
-            "id": 3,
-            "created_at": "2013-05-30T22:18:39Z",
-            "user_id": 4,
-            "rap_id": 22,
-            "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/003/original/284.mp3"
-        },
-        {
-            "id": 4,
-            "created_at": "2013-05-30T22:18:39Z",
-            "user_id": 8,
-            "rap_id": 23,
-            "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/003/original/285.mp3"
-        }
-    ]
 ### Create
     POST   /api/v1/verses
 ####Request:

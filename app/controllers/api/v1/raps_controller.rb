@@ -12,6 +12,7 @@ class Api::V1::RapsController < ApplicationController
 
   def show
     @rap = Rap.find params[:id]
+    @verses = @rap.verses
   end
 
   def update
