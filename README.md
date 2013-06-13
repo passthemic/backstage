@@ -212,17 +212,19 @@ All requests *except* registration and login require the user's auth_token to be
         }
 ####Response:
     {
-        "id": 14,
-        "created_at": "2013-06-12T04:39:44Z",
-        "user_id": 4,
-        "rap_id": 26,
-        "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/284.mp3",
         "rap": {
             "id": 26,
-            "user_id": 4,
-            "friend_id": 4,
+            "user_id": 12,
+            "friend_id": 11,
             "user_username": "testaccount2",
             "friend_username": "testaccount"
+        },
+        "verse": {
+            "id": 23,
+            "created_at": "2013-06-13T21:01:40Z",
+            "user_id": 11,
+            "rap_id": 26,
+            "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/284.mp3"
         }
     }
 ### Show
@@ -233,17 +235,19 @@ All requests *except* registration and login require the user's auth_token to be
     }
 ####Response:
     {
-        "id": 14,
-        "created_at": "2013-06-12T04:39:44Z",
-        "user_id": 4,
-        "rap_id": 26,
-        "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/284.mp3",
         "rap": {
             "id": 26,
-            "user_id": 4,
-            "friend_id": 4,
+            "user_id": 12,
+            "friend_id": 11,
             "user_username": "testaccount2",
             "friend_username": "testaccount"
+        },
+        "verse": {
+            "id": 23,
+            "created_at": "2013-06-13T21:01:40Z",
+            "user_id": 11,
+            "rap_id": 26,
+            "vocal_track_url": "http://s3.amazonaws.com/passthemic_testing/verses/vocal_tracks/000/000/014/original/284.mp3"
         }
     }
 ### Destroy
