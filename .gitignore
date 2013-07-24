@@ -15,3 +15,7 @@
 /tmp
 
 /config/heroku_env.rb
+
+/server.crt
+/server.csr
+/server.key
